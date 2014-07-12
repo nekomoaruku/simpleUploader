@@ -1,0 +1,14 @@
+.i3-textarea {
+    height: 40px !important;
+}
+
+.i3-list-header {
+    color: #1F88BE;
+    font-weight: normal !important;
+}
+
+.i3-preview-image {
+    width: 150px;
+    height: 100px;
+    padding: 4px;
+}

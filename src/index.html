@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="simpleUploader">
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="../bower_components/ng-file-upload/angular-file-upload-html5-shim.js"></script>
+  <script src="../bower_components/angular/angular.js"></script>
+  <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="../bower_components/ng-file-upload/angular-file-upload.js"></script>
+  <link href="../bower_components/semantic-ui/build/packaged/css/semantic.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="ui grid">
+    <div class="six wide column" ui-view="list"></div>
+    <div class="ten wide column" ui-view="detail"></div>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="states/quiz/quizListCtrl.js"></script>
+  <script src="states/quiz/quizDetailCtrl.js"></script>
+  <script src="services/proverbQuizManager.js"></script>
+  <script src="services/inputImageUtil.js"></script>
+
+</body>
+</html>

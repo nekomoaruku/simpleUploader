@@ -1,0 +1,14 @@
+<div class="ui relaxed divided selection list">
+  <div class="item">
+    <div class="content" ng-click="selectQuiz()">
+      <a class="header i3-list-header">新規登録</a>
+      <div class="description">新しくクイズを登録する用のボタンです</div>
+    </div>
+  </div>
+  <div class="item" ng-repeat="quiz in quizList | orderBy:'id'">
+    <div class="content" ng-click="selectQuiz(quiz)">
+      <a class="header i3-list-header">ID: {{quiz.id}}</a>
+      <div class="description">{{quiz.proverb.substring(0, 20) + '...'}}</div>
+    </div>
+  </div>
+</div>

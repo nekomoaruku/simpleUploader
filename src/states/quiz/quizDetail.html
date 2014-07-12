@@ -1,0 +1,83 @@
+<div class="ui small form">
+
+  <div class="ui three fields">
+    <div class="field">
+      <label>sheet</label>
+      <input type="text" placeholder="sheet"
+             ng-model="quiz.sheet">
+    </div>
+
+    <div class="field">
+      <label>number</label>
+      <input type="text" placeholder="number"
+             ng-model="quiz.number">
+    </div>
+
+    <div class="field">
+      <label>id</label>
+      <input type="text" disabled="disabled"
+             placeholder="id" ng-model="quiz.id">
+    </div>
+  </div>
+
+  <div class="ui two fields">
+    <div class="field">
+      <label>名言</label>
+      <textarea class="i3-textarea" ng-model="quiz.proverb" placeholder="proverb"></textarea>
+    </div>
+
+    <div class="field">
+      <label>Quiz - 穴埋め箇所は #{quiz} に置き換えて入力</label>
+      <textarea class="i3-textarea" ng-model="quiz.quiz" placeholder="quiz"></textarea>
+    </div>
+  </div>
+
+  <div class="inline field">
+    <label>選択肢0 - カンマ区切りで入力</label>
+    <div class="ui left labeled input">
+      <input type="text" placeholder="例: 99%, 27%" ng-model="quiz.choice0">
+    </div>
+  </div>
+  <div class="inline field">
+    <label>選択肢1 - カンマ区切りで入力</label>
+    <div class="ui left labeled input">
+      <input type="text" placeholder="choice2" ng-model="quiz.choice1">
+    </div>
+  </div>
+  <div class="inline field">
+    <label>選択肢2 - カンマ区切りで入力</label>
+    <div class="ui left labeled input">
+      <input type="text" placeholder="choice3" ng-model="quiz.choice2">
+    </div>
+  </div>
+  <div class="inline field">
+    <label>選択肢3 - カンマ区切りで入力</label>
+    <div class="ui left labeled input">
+      <input type="text" placeholder="choice4" ng-model="quiz.choice3">
+    </div>
+  </div>
+
+  <div class="inline field">
+    <label>正解の選択肢 - 0始まり</label>
+    <div class="ui left labeled input">
+      <input type="text" placeholder="rightChoiceIndex" ng-model="quiz.rightChoiceIndex">
+    </div>
+  </div>
+
+  <div class="ui two fields">
+    <div class="field">
+      <label>事例文章</label>
+      <textarea class="i3-textarea" placeholder="example" ng-model="quiz.example"></textarea>
+    </div>
+
+    <div class="field">
+      <label>事例画像</label>
+      <input type="file" ng-file-select="onFileSelect($files)">
+      <img class="ui image i3-preview-image" ng-src="{{quiz.exampleImageData || quiz.exampleImageUrl}}">
+    </div>
+  </div>
+
+</div>
+
+<div class="ui blue submit button"
+     ng-click="submitQuiz()">Submit</div>
