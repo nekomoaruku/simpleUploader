@@ -1,6 +1,14 @@
 <div class="ui small form">
 
+  <div class="inline field">
+    <label>テストモードを解除する(ユーザに配信開始)</label>
+    <div class="ui left labeled input">
+      <input type="text" placeholder="i3juhimaで解除" ng-model="quiz.isTestModeStr">
+    </div>
+  </div>
+
   <div class="ui three fields">
+
     <div class="field">
       <label>sheet</label>
       <input type="text" placeholder="sheet"
@@ -27,7 +35,7 @@
     </div>
 
     <div class="field">
-      <label>Quiz - 穴埋め箇所は #{quiz} に置き換えて入力</label>
+      <label>Quiz - 穴埋め箇所は#{blankX}に置き換えて入力</label>
       <textarea class="i3-textarea" ng-model="quiz.quiz" placeholder="quiz"></textarea>
     </div>
   </div>
@@ -76,6 +84,7 @@
       <img class="ui image i3-preview-image" ng-src="{{quiz.exampleImageData || quiz.exampleImageUrl}}">
     </div>
   </div>
+
 
 </div>
 

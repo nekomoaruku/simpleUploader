@@ -3,8 +3,11 @@
   var quizInitialValue = {
     id: '001000',
     sheet: 1,
-    number: 0
+    number: 0,
+    isTestMode: false
   };
+
+  var testModeKey = 'i3juhima';
 
   var proverbQuizManager = function($http, $q) {
 
@@ -50,7 +53,9 @@
         ],
         rightChoiceIndex: parseInt(rowData.rightChoiceIndex),
         example: rowData.example,
-        exampleImageData: rowData.exampleImageData
+        exampleImageUrl: rowData.exampleImageUrl,
+        exampleImageData: rowData.exampleImageData,
+        isTestMode: rowData.isTestModeStr === testModeKey ? 0 : 1
       };
 
       return $http.post(apiServer, postData);
@@ -80,6 +85,8 @@
       quiz.choice1 = quiz.choices[1].join(joinChar);
       quiz.choice2 = quiz.choices[2].join(joinChar);
       quiz.choice3 = quiz.choices[3].join(joinChar);
+      quiz.isTestModeStr = quiz.isTestMode ? '' : testModeKey;
+      console.log(quiz);
       return quiz;
     }
 

@@ -1,9 +1,10 @@
 (function() {
 
-  var quizIntialValue = {
+  var quizInitialValue = {
     id: '001000',
     sheet: 1,
-    number: 0
+    number: 0,
+    isTestMode: false
   };
 
   var quizListCtrl = function($scope, proverbQuizManager) {
@@ -18,10 +19,11 @@
 
     // クイズを選択
     $scope.selectQuiz = function(quiz) {
+      console.log(quiz);
       if (quiz) {
         proverbQuizManager.data.selectedQuiz = angular.copy(quiz);
       } else {
-        proverbQuizManager.data.selectedQuiz = angular.copy(quizIntialValue);
+        proverbQuizManager.data.selectedQuiz = angular.copy(quizInitialValue);
         proverbQuizManager.data.selectedQuiz.exampleImageData = 'data:image/png;base64,';
       }
     }

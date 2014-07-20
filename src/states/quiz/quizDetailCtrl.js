@@ -25,14 +25,13 @@
 
     // submit
     $scope.submitQuiz = function() {
-      console.log('uuuu');
       proverbQuizManager.putQuiz()
         .success(function() {
           proverbQuizManager.updateQuizList();
         })
         .error(function(error) {
         });
-    }
+    };
 
   };
 
